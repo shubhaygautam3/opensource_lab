@@ -2,29 +2,29 @@
 #include<conio.h>
 int main()
 {
-    int i, arr[10], search, first, last, middle;
+    int i, arr[10], search, f, l, mid;
     printf("Enter 10 elements (in ascending order): ");
     for(i=0; i<10; i++)
         scanf("%d", &arr[i]);
     printf("\nEnter element to be search: ");
     scanf("%d", &search);
-    first = 0;
-    last = 9;
-    middle = (first+last)/2;
-    while(first <= last)
+    f = 0;
+    l = 9;
+    mid = (f+l)/2;
+    while(f <= l)
     {
-        if(arr[middle]<search)
-            first = middle+1;
-        else if(arr[middle]==search)
+        if(arr[mid]<search)
+            f = mid+1;
+        else if(arr[mid]==search)
         {
-            printf("\nThe number, %d found at Position %d", search, middle+1);
+            printf("\nThe number, %d found at Position %d", search, mid+1);
             break;
         }
         else
-            last = middle-1;
-        middle = (first+last)/2;
+            l = mid-1;
+        mid = (f+l)/2;
     }
-    if(first>last)
+    if(f>l)
         printf("\nThe number, %d is not found in given Array", search);
     getch();
     return 0;
